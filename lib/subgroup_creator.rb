@@ -1,3 +1,5 @@
+require_relative "./matrix_tools"
+
 module ILoveSudoku
   class SubgroupCreator
     include MatrixTools

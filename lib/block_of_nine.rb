@@ -7,7 +7,7 @@ module ILoveSudoku
     end
 
     def self.new_from(nine_cells)
-      block = BlockOfNine.new
+      block = self.new
       nine_cells.each { |cell| block.add_cell(cell) }
       block
     end

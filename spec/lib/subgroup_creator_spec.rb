@@ -1,10 +1,10 @@
-require "subgroup_creator"
+require 'spec_helper'
 
 describe ILoveSudoku::SubgroupCreator do
   include Helpers
 
-  let(:cell_matrix){ CellMatrixCreator.new(valid_complete).cell_matrix }
-  let(:creator){ SubgroupCreator.new(cell_matrix) }
+  let(:cell_matrix){ ILoveSudoku::CellMatrixCreator.new(valid_complete).cell_matrix }
+  let(:creator){ ILoveSudoku::SubgroupCreator.new(cell_matrix) }
 
   describe "#subgroups" do
     it "returns an array" do
@@ -16,7 +16,10 @@ describe ILoveSudoku::SubgroupCreator do
     end
 
     it "contains only BlockOfNine objects" do
-      all_block_of_nines = creator.subgroups.all? { |item| item.is_a?(BlockOfNine) }
+      all_block_of_nines = creator.subgroups.all? do |item|
+        item.is_a?(ILoveSudoku::BlockOfNine)
+      end
+
       expect(all_block_of_nines).to eq true
     end
   end

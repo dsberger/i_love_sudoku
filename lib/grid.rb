@@ -1,7 +1,7 @@
 module ILoveSudoku
   class Grid
 
-    def initialize(cell_matrix, rows, columns, subgroups)
+    def initialize(cell_matrix:, rows:, columns:, subgroups:)
       @cell_matrix = cell_matrix
       @rows = rows
       @columns = columns

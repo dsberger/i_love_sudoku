@@ -1,5 +1,4 @@
-require "array_validator"
-require "spec_helper"
+require 'spec_helper'
 
 describe ILoveSudoku::ArrayValidator do
   include Helpers

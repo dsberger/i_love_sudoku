@@ -1,4 +1,4 @@
-require "matrix_tools"
+require_relative "./matrix_tools"
 
 module ILoveSudoku
   class ArrayValidator
