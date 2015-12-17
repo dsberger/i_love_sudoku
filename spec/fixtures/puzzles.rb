@@ -26,15 +26,15 @@ module Puzzles
   end
 
   def hard
-    [ [nil, nil, nil, 6, 1, nil, nil, 8, 5],
-      [2, nil, nil, nil, nil, nil, nil, nil, nil],
-      [8, nil, 5, nil, nil, 9, nil, 2, nil],
-      [nil, nil, nil, nil, nil, 7, 5, 9, nil],
-      [nil, 5, nil, nil, 2, nil, nil, 6, nil],
-      [nil, 7, 9, 5, nil, nil, nil, nil, nil],
-      [nil, 2, 3, nil, nil, nil, 6, nil, 1],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 4],
-      [4, 3, nil, nil, 8, 5, nil, nil, nil] ]
+    [ [8, 3, nil, nil, nil, 6, 9, nil, nil],
+      [nil, nil, nil, nil, 8, nil, 7, nil, nil],
+      [nil, 4, nil, nil, nil, 9, nil, nil, nil],
+      [5, nil, nil, 9, nil, 3, 2, 6, nil],
+      [nil, nil, nil, nil, nil, nil, nil, nil, nil],
+      [nil, 7, 6, 4, nil, 5, nil, nil, 1],
+      [nil, nil, nil, 5, nil, nil, nil, 1, nil],
+      [nil, nil, 7, nil, 1, nil, nil, nil, nil],
+      [nil, nil, 3, 6, nil, nil, nil, 5, 8] ]
   end
 
   def evil

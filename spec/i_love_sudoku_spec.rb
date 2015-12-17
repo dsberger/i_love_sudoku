@@ -9,18 +9,18 @@ describe ILoveSudoku do
   end
 
   it 'solves an easy puzzle' do
-    expect(ILoveSudoku::Solver.solve(easy)).to eq easy_solution
+    expect(ILoveSudoku.solve(easy)).to eq easy_solution
   end
 
   it 'solves a medium puzzle' do
-    expect(ILoveSudoku::Solver.solve(medium)).to eq medium_solution
+    expect(ILoveSudoku.solve(medium)).to eq medium_solution
   end
 
   it 'solves a hard puzzle' do
-    expect(ILoveSudoku::Solver.solve(hard)).to eq hard_solution
+    expect(ILoveSudoku.solve(hard)).to eq hard_solution
   end
 
   it 'solves an evil puzzle' do
-    expect(ILoveSudoku::Solver.solve(evil)).to eq evil_solution
+    expect(ILoveSudoku.solve(evil)).to eq evil_solution
   end
 end
