@@ -1,16 +1,17 @@
 require 'spec_helper'
 
 describe ILoveSudoku::SubgroupValidator do
-  include Helpers
+  include Puzzles
+  include PuzzleSolutions
 
   describe "#valid?" do
     it "returns true when valid and complete" do
-      validator = ILoveSudoku::SubgroupValidator.new(valid_complete)
+      validator = ILoveSudoku::SubgroupValidator.new(easy_solution)
       expect(validator.valid?).to eq true
     end
 
     it "returns true when valid and incomplete" do
-      validator = ILoveSudoku::SubgroupValidator.new(valid_incomplete)
+      validator = ILoveSudoku::SubgroupValidator.new(easy)
       expect(validator.valid?).to eq true
     end
 

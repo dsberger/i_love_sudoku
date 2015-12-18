@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe ILoveSudoku::StraightLineCreator do
-  include Helpers
+  include PuzzleSolutions
 
-  let(:cell_matrix){ ILoveSudoku::CellMatrixCreator.new(valid_complete).cell_matrix }
+  let(:cell_matrix){ ILoveSudoku::CellMatrixCreator.new(easy_solution).cell_matrix }
   let(:creator){ ILoveSudoku::StraightLineCreator.new(cell_matrix) }
 
   describe "#lines" do

@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe ILoveSudoku::CellMatrixCreator do
-  include Helpers
+  include PuzzleSolutions
 
   describe "#cell_matrix" do
 
-    let(:creator){ ILoveSudoku::CellMatrixCreator.new(valid_complete) }
+    let(:creator){ ILoveSudoku::CellMatrixCreator.new(easy_solution) }
 
     it "is an array" do
       expect(creator.cell_matrix).to be_a Array

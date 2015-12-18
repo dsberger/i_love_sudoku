@@ -18,4 +18,3 @@ require 'subgroup_validator'
 # load fixtures
 require 'puzzles'
 require 'puzzle_solutions'
-require 'helpers'

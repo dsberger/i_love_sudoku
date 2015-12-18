@@ -1,13 +1,14 @@
 require 'spec_helper'
 
 describe ILoveSudoku::Grid do
-  include Helpers
+  include Puzzles
+  include PuzzleSolutions
 
   describe "#values_matrix" do
     context "with a complete board" do
       it "returns a matrix of completed values" do
-        grid = ILoveSudoku::Grid.new_from_matrix(valid_complete)
-        expect(grid.values_matrix).to eq valid_complete
+        grid = ILoveSudoku::Grid.new_from_matrix(easy_solution)
+        expect(grid.values_matrix).to eq easy_solution
       end
     end
   end
@@ -15,7 +16,7 @@ describe ILoveSudoku::Grid do
   describe "#possibilities_matrix" do
     context "with a complete board" do
       it "returns a 9x9 matrix of nils" do
-        grid = ILoveSudoku::Grid.new_from_matrix(valid_complete)
+        grid = ILoveSudoku::Grid.new_from_matrix(easy_solution)
         expect(grid.possibilities_matrix).to eq matrix_of_nils
       end
     end
@@ -23,9 +24,9 @@ describe ILoveSudoku::Grid do
 
   describe "#solve!" do
     it "doesn't do anything to a complete array" do
-      grid = ILoveSudoku::Grid.new_from_matrix(valid_complete)
+      grid = ILoveSudoku::Grid.new_from_matrix(easy_solution)
 
-      expect(grid.values_matrix).to eq valid_complete
+      expect(grid.values_matrix).to eq easy_solution
     end
 
     it "completes a matrix with one cell left" do

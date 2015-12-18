@@ -1,17 +1,18 @@
 require 'spec_helper'
 
 describe ILoveSudoku::ArrayValidator do
-  include Helpers
+  include Puzzles
+  include PuzzleSolutions
 
   describe "#valid?" do
     context "as row validator" do
       it "returns true when valid and complete" do
-        validator = ILoveSudoku::ArrayValidator.new(valid_complete)
+        validator = ILoveSudoku::ArrayValidator.new(easy_solution)
         expect(validator.valid?).to eq true
       end
 
       it "returns true when valid and incomplete" do
-        validator = ILoveSudoku::ArrayValidator.new(valid_incomplete)
+        validator = ILoveSudoku::ArrayValidator.new(easy)
         expect(validator.valid?).to eq true
       end
 
@@ -23,12 +24,12 @@ describe ILoveSudoku::ArrayValidator do
 
     context "as column validator with transposed input" do
       it "returns true when valid and complete" do
-        validator = ILoveSudoku::ArrayValidator.new(valid_complete.transpose)
+        validator = ILoveSudoku::ArrayValidator.new(easy_solution.transpose)
         expect(validator.valid?).to eq true
       end
 
       it "returns true when valid and incomplete" do
-        validator = ILoveSudoku::ArrayValidator.new(valid_incomplete.transpose)
+        validator = ILoveSudoku::ArrayValidator.new(easy.transpose)
         expect(validator.valid?).to eq true
       end
 

@@ -1,16 +1,17 @@
 require 'spec_helper'
 
 describe ILoveSudoku::SolutionValidator do
-  include Helpers
+  include Puzzles
+  include PuzzleSolutions
 
   describe "valid?" do
     it "returns true when valid and incomplete" do
-      validator = ILoveSudoku::SolutionValidator.new(valid_incomplete)
+      validator = ILoveSudoku::SolutionValidator.new(easy)
       expect(validator.valid?).to eq true
     end
 
     it "returns true when valid and complete" do
-      validator = ILoveSudoku::SolutionValidator.new(valid_complete)
+      validator = ILoveSudoku::SolutionValidator.new(easy_solution)
       expect(validator.valid?).to eq true
     end
 
@@ -32,12 +33,12 @@ describe ILoveSudoku::SolutionValidator do
 
   describe "complete?" do
     it "returns true with no nil values" do
-      validator = ILoveSudoku::SolutionValidator.new(valid_complete)
+      validator = ILoveSudoku::SolutionValidator.new(easy_solution)
       expect(validator.complete?).to eq true
     end
 
     it "returns false with one nil value" do
-      validator = ILoveSudoku::SolutionValidator.new(valid_incomplete)
+      validator = ILoveSudoku::SolutionValidator.new(easy)
       expect(validator.complete?).to eq false
     end
   end
