@@ -1,12 +1,11 @@
 require 'spec_helper'
 
 describe ILoveSudoku::SolutionValidator do
-  include Puzzles
-  include PuzzleSolutions
+  include TestPuzzlesAndSolutions
 
   describe "valid?" do
     it "returns true when valid and incomplete" do
-      validator = ILoveSudoku::SolutionValidator.new(easy)
+      validator = ILoveSudoku::SolutionValidator.new(easy_puzzle)
       expect(validator.valid?).to eq true
     end
 
@@ -16,17 +15,17 @@ describe ILoveSudoku::SolutionValidator do
     end
 
     it "returns false with a column dupe" do
-      validator = ILoveSudoku::SolutionValidator.new(invalid_due_to_column_dupe)
+      validator = ILoveSudoku::SolutionValidator.new(invalid_due_to_column_dupe_puzzle)
       expect(validator.valid?).to eq false
     end
 
     it "returns false with a row dupe" do
-      validator = ILoveSudoku::SolutionValidator.new(invalid_due_to_row_dupe)
+      validator = ILoveSudoku::SolutionValidator.new(invalid_due_to_row_dupe_puzzle)
       expect(validator.valid?).to eq false
     end
 
     it "returns false with a subgroup dupe" do
-      validator = ILoveSudoku::SolutionValidator.new(invalid_due_to_subgroup_dupe)
+      validator = ILoveSudoku::SolutionValidator.new(invalid_due_to_subgroup_dupe_puzzle)
       expect(validator.valid?).to eq false
     end
   end
@@ -38,7 +37,7 @@ describe ILoveSudoku::SolutionValidator do
     end
 
     it "returns false with one nil value" do
-      validator = ILoveSudoku::SolutionValidator.new(easy)
+      validator = ILoveSudoku::SolutionValidator.new(easy_puzzle)
       expect(validator.complete?).to eq false
     end
   end

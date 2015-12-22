@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe ILoveSudoku::ArrayValidator do
-  include Puzzles
-  include PuzzleSolutions
+  include TestPuzzlesAndSolutions
 
   describe "#valid?" do
     context "as row validator" do
@@ -12,12 +11,12 @@ describe ILoveSudoku::ArrayValidator do
       end
 
       it "returns true when valid and incomplete" do
-        validator = ILoveSudoku::ArrayValidator.new(easy)
+        validator = ILoveSudoku::ArrayValidator.new(easy_puzzle)
         expect(validator.valid?).to eq true
       end
 
       it "returns false when invalid due to row dupe" do
-        validator = ILoveSudoku::ArrayValidator.new(invalid_due_to_row_dupe)
+        validator = ILoveSudoku::ArrayValidator.new(invalid_due_to_row_dupe_puzzle)
         expect(validator.valid?).to eq false
       end
     end
@@ -29,12 +28,12 @@ describe ILoveSudoku::ArrayValidator do
       end
 
       it "returns true when valid and incomplete" do
-        validator = ILoveSudoku::ArrayValidator.new(easy.transpose)
+        validator = ILoveSudoku::ArrayValidator.new(easy_puzzle.transpose)
         expect(validator.valid?).to eq true
       end
 
       it "returns false when invalid due to column dupe" do
-        validator = ILoveSudoku::ArrayValidator.new(invalid_due_to_column_dupe.transpose)
+        validator = ILoveSudoku::ArrayValidator.new(invalid_due_to_column_dupe_puzzle.transpose)
         expect(validator.valid?).to eq false
       end
     end

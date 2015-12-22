@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ILoveSudoku::CellMatrixCreator do
-  include PuzzleSolutions
+  include TestPuzzlesAndSolutions
 
   describe "#cell_matrix" do
 

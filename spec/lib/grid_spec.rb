@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe ILoveSudoku::Grid do
-  include Puzzles
-  include PuzzleSolutions
+  include TestPuzzlesAndSolutions
 
   describe "#values_matrix" do
     context "with a complete board" do
@@ -30,7 +29,7 @@ describe ILoveSudoku::Grid do
     end
 
     it "completes a matrix with one cell left" do
-      grid = ILoveSudoku::Grid.new_from_matrix(one_cell_left)
+      grid = ILoveSudoku::Grid.new_from_matrix(one_cell_left_puzzle)
 
       expect(grid.values_matrix).to eq easy_solution
     end

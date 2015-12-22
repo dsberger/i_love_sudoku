@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ILoveSudoku::SubgroupCreator do
-  include PuzzleSolutions
+  include TestPuzzlesAndSolutions
 
   let(:cell_matrix){ ILoveSudoku::CellMatrixCreator.new(easy_solution).cell_matrix }
   let(:creator){ ILoveSudoku::SubgroupCreator.new(cell_matrix) }
