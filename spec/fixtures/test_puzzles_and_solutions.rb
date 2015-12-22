@@ -172,4 +172,25 @@ module TestPuzzlesAndSolutions
       [nil, nil, nil, nil, nil, nil, nil, nil, nil],
       [nil, nil, nil, nil, nil, nil, nil, nil, nil] ]
   end
+
+  def matrix_of_nils
+    matrix = []
+    9.times { matrix << [nil] * 9 }
+    matrix
+  end
+
+  def blank_board_string
+    ["...|...|...",
+     "...|...|...",
+     "...|...|...",
+     "---+---+---",
+     "...|...|...",
+     "...|...|...",
+     "...|...|...",
+     "---+---+---",
+     "...|...|...",
+     "...|...|...",
+     "...|...|..."].join("\n")
+  end
+
 end

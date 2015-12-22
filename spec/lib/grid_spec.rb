@@ -37,12 +37,6 @@ describe ILoveSudoku::Grid do
 
   private
 
-  def matrix_of_nils
-    matrix = []
-    9.times { matrix << [nil] * 9 }
-    matrix
-  end
-
   def create_inverted_matrix(matrix)
     matrix.map do |row|
       row.map do |cell|
