@@ -1,8 +1,6 @@
-# ILoveSudoku
+# I Love Sudoku
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/i_love_sudoku`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+I Love Sudoku is a gem for solving any sudoku puzzle.
 
 ## Installation
 
@@ -22,17 +20,86 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+###`ILoveSudoku.new(matrix)`
 
-## Development
+You can create a new puzzle either with or without a ready-made matrix.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+If you have a 9x9 nested array already, for example if you're using the gem in the context of a web app where that formatted object comes over from the front end, you can create a new puzzle with that array. Note that empty spaces are represented by `nil`.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+$ matrix = [ [nil, 7, nil, nil, nil, nil, 5, nil, nil],
+             [nil, nil, nil, nil, 5, 1, nil, nil, nil],
+             [nil, nil, nil, 3, 7, 9, 2, 6, 8],
+             [1, 2, nil, nil, 8, nil, 4, nil, 6],
+             [nil, 4, nil, nil, nil, nil, nil, 9, nil],
+             [9, nil, 3, nil, 2, nil, nil, 8, 5],
+             [8, 9, 7, 2, 4, 3, nil, nil, nil],
+             [nil, nil, nil, 6, 1, nil, nil, nil, nil],
+             [nil, nil, 2, nil, nil, nil, nil, 4, nil] ]
+$ puzzle = ILoveSudoku.new(matrix)
+$ puts puzzle.unsolved_string
+.7.|...|5..
+...|.51|...
+...|379|268
+---+---+---
+12.|.8.|4.6
+.4.|...|.9.
+9.3|.2.|.85
+---+---+---
+897|243|...
+...|61.|...
+..2|...|.4.
+```
+
+If you're playing with the gem in your terminal, it probably makes more sense to create a puzzle with no matrix and manually input the separate lines. See `#edit_row` for details.
+
+
+```
+$ puzzle = ILoveSudoku.new
+$ puts puzzle.unsolved_string
+...|...|...
+...|...|...
+...|...|...
+---+---+---
+...|...|...
+...|...|...
+...|...|...
+---+---+---
+...|...|...
+...|...|...
+...|...|...
+```
+
+###`edit_row(row_number, string)`
+This method takes the row number (indexed from 0) and a string of periods and integers and overwrites the existing row. This is a good way to manually enter a puzzle in your command line.
+
+```
+$ puzzle = ILoveSudoku.new
+$ puzzle.edit_row(1, "3..4..678")
+$ puts puzzle.unsolved_string
+...|...|...
+3..|4..|678
+...|...|...
+---+---+---
+...|...|...
+...|...|...
+...|...|...
+---+---+---
+...|...|...
+...|...|...
+...|...|...
+```
+
+###`#unsolved_string` and `#unsolved_matrix`
+Returns the current state of the puzzle input in string or matrix format.
+
+###`#solved_string` and `#solved_matrix`
+Returns the solved puzzle in string or matrix format.
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/i_love_sudoku.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dsberger/i_love_sudoku.
 
 
 ## License
