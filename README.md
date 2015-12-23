@@ -70,7 +70,7 @@ $ puts puzzle.unsolved_string
 ...|...|...
 ```
 
-###`edit_row(row_number, string)`
+###`#edit_row(row_number, string)`
 This method takes the row number (indexed from 0) and a string of periods and integers and overwrites the existing row. This is a good way to manually enter a puzzle in your command line.
 
 ```
