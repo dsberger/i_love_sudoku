@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dsberger@gmail.com"]
 
   spec.summary       = "A gem to solve any sudoku puzzle."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "http://github.com/dsberger/i_love_sudoku"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
