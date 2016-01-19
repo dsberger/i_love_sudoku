@@ -1,6 +1,6 @@
 # I Love Sudoku
 
-I Love Sudoku is a gem for solving any sudoku puzzle.
+I Love Sudoku is a gem for solving any sudoku puzzle. Documentation for public methods is below. You can also read about [how it works at this link](https://github.com/dsberger/i_love_sudoku/blob/master/How_it_works.md).
 
 ## Installation
 
