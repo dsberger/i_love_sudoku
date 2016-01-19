@@ -1,3 +1,5 @@
+[back to home](https://github.com/dsberger/i_love_sudoku)
+
 ##How does it work?
 I'm so glad you asked. There are a lot of objects at work here so I'll try to explain how the important ones are working together.
 
@@ -30,3 +32,5 @@ Our Grid object contains two matrixes for the GraphSearcher to use. `Grid#values
 Inside the `GraphSearcher#valid_next_iterations` method, we locate a single unsolved cell. We can find all possible values of that cell, and create a new GraphSearch object for all of them.
 
 For instance, say that a specific cell can be 1, 2 or 3. This method makes a GraphSearcher instance assuming that the cell is 1, another assuming that it's 2, and a third assuming that it's 3. Each of those instances then revert to the human-style solving methods of the Grid. If a successful solution can't be found, the `result` will be `false` instead of a matrix.
+
+[back to home](https://github.com/dsberger/i_love_sudoku)
